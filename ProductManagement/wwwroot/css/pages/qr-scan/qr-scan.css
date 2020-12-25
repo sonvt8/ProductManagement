@@ -1,0 +1,15 @@
+#confirm_scan_status span, #confirm_pay_status span, #current_sponsor_confirm_scan span{
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	/*overflow: overlay;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#email_confirm_scan, #fullname_confirm_scan, #organization_confirm_scan{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

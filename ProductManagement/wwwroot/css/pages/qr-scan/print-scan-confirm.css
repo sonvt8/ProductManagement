@@ -1,0 +1,15 @@
+.print{
+    margin-bottom: 5px !important;
+    text-transform: capitalize;
+    border: 1px solid #ddd;
+}
+
+.pl-0{
+    padding-left: 0 !important;
+}
+
+.bb-dotted{
+	/*width: 150px !important;*/
+	border-bottom: 1px dotted #ddd;
+	display: inline-block
+}
