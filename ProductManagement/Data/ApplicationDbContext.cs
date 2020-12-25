@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ProductManagement.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,6 @@ namespace ProductManagement.Data
             : base(options)
         {
         }
+        public DbSet<Product> Products { get; set; }
     }
 }
