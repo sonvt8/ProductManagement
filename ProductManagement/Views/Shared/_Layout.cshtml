@@ -4,8 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ProductManagement</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/toastr.min.css" />
+    <link rel="stylesheet" href="~/css/fonts/fonts.css" />
+    <link rel="stylesheet" href="~/css/icons/icomoon/styles.css" />
+    <link rel="stylesheet" href="~/css/icons/fontawesome/fontawesome-all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/components.css" />
+    <link rel="stylesheet" href="~/css/colors.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/DateTimePicker.css" />
 </head>
 <body>
     <header>
@@ -44,6 +52,74 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @* Datatable resoures *@
+    <script src="~/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="~/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+    <script src="~/js/plugins/tables/datatables/extensions/jszip/jszip.min.js"></script>
+    <script src="~/js/plugins/tables/datatables/extensions/select.min.js"></script>
+
+    @* Theme JS files *@
+    <script src="~/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="~/js/plugins/notifications/sweet_alert.min.js"></script>
+    <script src="~/js/plugins/notifications/pnotify.min.js"></script>
+    <script src="~/js/plugins/notifications/toastr.min.js"></script>
+    <script src="~/js/plugins/forms/styling/uniform.min.js"></script>
+    <script src="~/js/plugins/ui/nicescroll.min.js"></script>
+    <script src="~/js/selectdate.js"></script>
+    <script src="~/lib/bootstrap/dist/js/DateTimePicker.js"></script>
+    <script src="~/lib/bootstrap/dist/js/jquery.validate.js"></script>
+
+    <script>
+        let Loading = {
+            show: () => {
+                $("body").block({
+                    message: '<i class="icon-spinner9 spinner"></i>',
+                    overlayCSS: {
+                        backgroundColor: "#1B2024",
+                        opacity: 0.85,
+                        cursor: "wait",
+                        zIndex: 1051
+                    },
+                    css: {
+                        border: 0,
+                        padding: 0,
+                        backgroundColor: "none",
+                        color: "#fff",
+                        zIndex: 1052
+                    }
+                })
+            },
+            close: () => {
+                setTimeout(() => { $("body").unblock(); }, 300);
+            }
+        };
+
+        let DataTableLoading = {
+            show: () => {
+                $(".dataTable").block({
+                    message: '<i class="icon-spinner9 spinner"></i>',
+                    overlayCSS: {
+                        backgroundColor: "#eee",
+                        opacity: 0.85,
+                        cursor: "wait",
+                        zIndex: 1051
+                    },
+                    css: {
+                        border: 0,
+                        padding: 0,
+                        backgroundColor: "none",
+                        color: "#fff",
+                        zIndex: 1052
+                    }
+                })
+            },
+            close: () => {
+                setTimeout(() => { $(".dataTable").unblock(); }, 300);
+            }
+        };
+    </script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
